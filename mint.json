@@ -38,7 +38,7 @@
       "url": "space-parameters"
     },
     {
-      "name": "Stellar Library",
+      "name": "Astronautics",
       "url": "library"
     }
   ],
@@ -100,10 +100,22 @@
       ]
     },
     {
-      "group": "Stellar Library",
+      "group": "Astronautics Library",
       "pages": [
-        "library/rocket-equation",
-        "library/specific-impulse"
+        {
+          "group": "Astrodynamics",
+          "pages": [
+            "library/rocket-equation",
+            "library/vis-viva-equation"
+          ]
+        },
+        {
+          "group": "Propulsion",
+          "pages": [
+            "library/thrust-equation",
+            "library/specific-impulse"
+          ]
+        }
       ]
     }
   ],

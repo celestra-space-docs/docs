@@ -1,0 +1,54 @@
+---
+title: "Vis-Viva Equation"
+description: "The Vis-Viva Equation calculates orbital velocity in elliptical orbits, balancing kinetic and potential energy, essential for spacecraft maneuver planning."
+---
+
+## Formula
+
+The Vis-Viva equation is an important formula in orbital mechanics that relates the speed of an orbiting body to the distances from the central body and the characteristics of its orbit. The equation is derived from the conservation of energy and Newton's laws of motion.
+
+$$ v = \sqrt{GM\left(\frac{2}{r} - \frac{1}{a}\right)} $$
+
+Where:
+
+- $ v $ is the orbital speed of the object.
+- $ G $ is the gravitational constant. Its value is approximately $6.674 \times 10^{-11} \, \text{Nm}^2/\text{kg}^2$.
+- $ M $ is the mass of the central body around which the object is orbiting.
+- $ r $ is the radial distance of the orbiting body from the center of the central body.
+- $ a $ is the semi-major axis of the orbit.
+
+**Deductions from the Vis-Viva Equation:**
+
+1.  **Velocity at Different Points**: The equation shows that the orbital speed varies at different points in the orbit. For elliptical orbits, the speed is highest at the periapsis (closest point to the central body) and lowest at the apoapsis (farthest point).
+
+2.  **Circular Orbits**: In a circular orbit, the radial distance $ r $ is constant and equal to the semi-major axis $ a $. Thus, the orbital speed is also constant and is given by:
+
+    $$ v = \sqrt{\frac{GM}{r}} $$
+
+3.  **Energy Conservation**: The Vis-Viva equation embodies the principle of conservation of mechanical energy in orbit. The kinetic and potential energy of an orbiting body change as it moves, but their sum remains constant.
+
+4.  **Escape Velocity**: If the orbit's semi-major axis $ a $ is infinite (hypothetical parabolic escape orbit), the Vis-Viva equation yields the escape velocity formula.
+
+    $$ v\_{esc} = \sqrt{\frac{2GM}{r}} $$
+
+    - $v\_{esc}$: This represents the escape velocity — the minimum speed required for an object to escape the gravitational field of a celestial body.
+    - $G$: This is the gravitational constant, a fundamental constant of nature. Its value is approximately $6.674 \times 10^{-11} \, \text{Nm}^2/\text{kg}^2$.
+    - $M$: This is the mass of the celestial body from which the object is trying to escape. The greater the mass, the higher the escape velocity.
+    - $r$: This is the distance from the center of the celestial body to the point of escape. For objects escaping from the surface of a planet, this is typically the radius of the planet.
+
+5.  **Transfer Orbits**: The Vis-Viva equation is essential in calculating the velocities needed for transfer orbits, like Hohmann transfer orbits, used for efficient movement between different orbits.
+
+6.  **Orbital Characteristics**: By rearranging the equation, you can derive other orbital elements like the semi-major axis from known values of velocity and radial distance.
+
+The Vis-Viva equation is a fundamental tool in the field of celestial mechanics and astrodynamics, aiding in the planning and analysis of satellite orbits, interplanetary missions, and other aspects of space exploration.
+
+## Derivation
+
+The formula can be derived from the principle of conservation of energy. It equates the kinetic energy required to reach escape velocity with the gravitational potential energy at a distance $r$ from the center of the celestial body. The derivation goes like this:
+
+- **Kinetic Energy**: The kinetic energy ($KE$) required to reach escape velocity is given by $ \frac{1}{2}mv\_{esc}^2 $, where $m$ is the mass of the object.
+- **Gravitational Potential Energy**: The gravitational potential energy ($PE$) at a distance $r$ from the center of a mass $M$ is given by $ -\frac{GMm}{r} $.
+
+By setting the kinetic energy equal to the negative of the gravitational potential energy ($ KE = -PE $) and solving for $v\_{esc}$, we arrive at the escape velocity formula. The negative sign in the gravitational potential energy indicates that work must be done against the gravitational field.
+
+This formula shows that escape velocity is independent of the mass of the object escaping, relying solely on the characteristics of the celestial body (its mass and radius) and the universal gravitational constant. It's a fundamental calculation for understanding the effort required to send missions into space from various celestial bodies.
