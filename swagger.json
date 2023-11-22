@@ -1,0 +1,517 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "title": "service.proto",
+    "version": "version not set"
+  },
+  "host": "api.celestra.space",
+  "paths": {
+    "/twirp/parameter.v1.SpaceParameterService/CreateParameter": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "summary": "Parameter CRUD-L",
+        "operationId": "CreateParameter",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_CreateParameterRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_CreateParameterResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/CreateParameterSet": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "summary": "Parameter Set CRUD-L",
+        "operationId": "CreateParameterSet",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_CreateParameterSetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_CreateParameterSetResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/DeleteParameter": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "DeleteParameter",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DeleteParameterRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DeleteParameterResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/DeleteParameterSet": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "DeleteParameterSet",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DeleteParameterSetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DeleteParameterSetResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/DescribeParameter": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "DescribeParameter",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DescribeParameterRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DescribeParameterResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/DescribeParameterSet": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "DescribeParameterSet",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DescribeParameterSetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_DescribeParameterSetResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/ListParameter": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "ListParameter",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_ListParameterRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_ListParameterResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/ListParameterSet": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "ListParameterSet",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_ListParameterSetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_ListParameterSetResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/UpdateParameter": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "UpdateParameter",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_UpdateParameterRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_UpdateParameterResponse"
+            }
+          }
+        }
+      }
+    },
+    "/twirp/parameter.v1.SpaceParameterService/UpdateParameterSet": {
+      "post": {
+        "tags": [
+          "SpaceParameterService"
+        ],
+        "operationId": "UpdateParameterSet",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_UpdateParameterSetRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/parameter.v1_UpdateParameterSetResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "parameter.v1_CreateParameterRequest": {
+      "description": "Fields: name, parameter",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parameter": {
+          "$ref": "#/definitions/parameter.v1_Parameter"
+        }
+      }
+    },
+    "parameter.v1_CreateParameterResponse": {
+      "description": "Fields: parameter",
+      "type": "object",
+      "properties": {
+        "parameter": {
+          "$ref": "#/definitions/parameter.v1_Parameter"
+        }
+      }
+    },
+    "parameter.v1_CreateParameterSetRequest": {
+      "description": "Fields: name",
+      "type": "object",
+      "title": "ParameterSet operations",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_CreateParameterSetResponse": {
+      "description": "Fields: parameter_set_id, name",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parameter_set_id": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_DeleteParameterRequest": {
+      "description": "Fields: parameterId",
+      "type": "object",
+      "properties": {
+        "parameterId": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_DeleteParameterResponse": {
+      "description": "Fields: success",
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "parameter.v1_DeleteParameterSetRequest": {
+      "description": "Fields: parameterSetId",
+      "type": "object",
+      "properties": {
+        "parameterSetId": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_DeleteParameterSetResponse": {
+      "description": "Fields: success",
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "parameter.v1_DescribeParameterRequest": {
+      "description": "Fields: parameterId",
+      "type": "object",
+      "properties": {
+        "parameterId": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_DescribeParameterResponse": {
+      "description": "Fields: parameter",
+      "type": "object",
+      "properties": {
+        "parameter": {
+          "$ref": "#/definitions/parameter.v1_Parameter"
+        }
+      }
+    },
+    "parameter.v1_DescribeParameterSetRequest": {
+      "description": "Fields: parameterSetId",
+      "type": "object",
+      "properties": {
+        "parameterSetId": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_DescribeParameterSetResponse": {
+      "description": "Fields: parameterSet",
+      "type": "object",
+      "properties": {
+        "parameterSet": {
+          "$ref": "#/definitions/parameter.v1_ParameterSet"
+        }
+      }
+    },
+    "parameter.v1_ListParameterRequest": {
+      "description": "Fields: parameterSetId",
+      "type": "object",
+      "properties": {
+        "parameterSetId": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_ListParameterResponse": {
+      "description": "Fields: parameters",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/parameter.v1_Parameter"
+          }
+        }
+      }
+    },
+    "parameter.v1_ListParameterSetRequest": {
+      "type": "object"
+    },
+    "parameter.v1_ListParameterSetResponse": {
+      "description": "Fields: ParameterSets",
+      "type": "object",
+      "properties": {
+        "ParameterSets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/parameter.v1_ParameterSet"
+          }
+        }
+      }
+    },
+    "parameter.v1_Parameter": {
+      "description": "Fields: parameter_id, name, value",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parameter_id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_ParameterSet": {
+      "description": "Fields: parameter_set_id, name, parameters",
+      "type": "object",
+      "title": "Common types",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parameter_set_id": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/parameter.v1_Parameter"
+          }
+        }
+      }
+    },
+    "parameter.v1_UpdateParameterRequest": {
+      "description": "Fields: parameterId, parameter",
+      "type": "object",
+      "properties": {
+        "parameter": {
+          "$ref": "#/definitions/parameter.v1_Parameter"
+        },
+        "parameterId": {
+          "type": "string"
+        }
+      }
+    },
+    "parameter.v1_UpdateParameterResponse": {
+      "description": "Fields: parameter",
+      "type": "object",
+      "properties": {
+        "parameter": {
+          "$ref": "#/definitions/parameter.v1_Parameter"
+        }
+      }
+    },
+    "parameter.v1_UpdateParameterSetRequest": {
+      "description": "Fields: parameterSetId, name, parameters",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "parameterSetId": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/parameter.v1_Parameter"
+          }
+        }
+      }
+    },
+    "parameter.v1_UpdateParameterSetResponse": {
+      "description": "Fields: parameterSet",
+      "type": "object",
+      "properties": {
+        "parameterSet": {
+          "$ref": "#/definitions/parameter.v1_ParameterSet"
+        }
+      }
+    }
+  }
+}

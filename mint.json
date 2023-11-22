@@ -1,0 +1,132 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Starter Kit",
+  "logo": {
+    "dark": "/logo/celestra-dark.svg",
+    "light": "/logo/celestra-light.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#b85256",
+    "light": "#f97068",
+    "dark": "#773344",
+    "background": {
+      "dark": "#090014"
+    },
+    "anchors": {
+      "from": "#FF7F57",
+      "to": "#9563FF"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Console",
+      "url": "https://www.celestra.space/console"
+    },
+    {
+      "name": "Email us",
+      "url": "mailto:support@celestra.space"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Start your account",
+    "url": "https://www.celestra.space/console"
+  },
+  "tabs": [
+    {
+      "name": "Space Parameters",
+      "url": "space-parameters"
+    },
+    {
+      "name": "Stellar Library",
+      "url": "library"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Join our Discord",
+      "icon": "discord",
+      "url": "https://discord.gg/rXnXygJ2fg"
+    }
+  ],
+  "primaryTab": {
+    "name": "User guide"
+  },
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "Essentials",
+      "pages": [
+        "essentials/security",
+        "essentials/monitoring",
+        "essentials/quotas",
+        "essentials/units",
+        "essentials/glossary"
+      ]
+    },
+    {
+      "group": "Space Parameters",
+      "pages": [
+        "space-parameters/what-it-is",
+        "space-parameters/getting-started",
+        "space-parameters/pricing"
+      ]
+    },
+    {
+      "group": "How-to",
+      "pages": [
+        "space-parameters/howto/orbit"
+      ]
+    },
+    {
+      "group": "Endpoints",
+      "pages": [
+        "space-parameters/endpoints/parameter-crud-l",
+        "space-parameters/endpoints/parameter-set-crud-l",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedeleteparameter",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedeleteparameterset",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedescribeparameter",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedescribeparameterset",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicelistparameter",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicelistparameterset",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterserviceupdateparameter",
+        "space-parameters/endpoints/post-twirpparameterv1spaceparameterserviceupdateparameterset"
+      ]
+    },
+    {
+      "group": "Stellar Library",
+      "pages": [
+        "library/rocket-equation",
+        "library/specific-impulse"
+      ]
+    }
+  ],
+  "api": {
+    "baseUrl": "https://api.celestra.space",
+    "auth": {
+      "method": "key",
+      "name": "Authorization",
+      "inputPrefix": "token <secret>"
+    }
+  },
+  "openapi": "https://api.celestra.space/openapi.json",
+  "footerSocials": {
+    "twitter": "https://twitter.com/celestra-space",
+    "github": "https://github.com/celestra-space-docs",
+    "linkedin": "https://www.linkedin.com/company/celestra"
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": true
+  }
+}
