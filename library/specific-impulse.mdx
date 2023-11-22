@@ -5,20 +5,24 @@ description: "Specific Impulse measures rocket engine efficiency, linking thrust
 
 ## Explaination
 
-Specific Impulse (Isp) is a key parameter in rocketry, representing the efficiency of a rocket engine. It's defined as the amount of thrust produced per unit of propellant flow rate. Essentially, it tells us how effectively a rocket engine turns fuel into thrust.
+Specific Impulse ($I_{sp}$) is a key parameter in rocketry, representing the efficiency of a rocket engine. It's defined as the amount of thrust produced per unit of propellant flow rate. Essentially, it tells us how effectively a rocket engine turns fuel into thrust.
 
 ## How to Calculate Specific Impulse
 
 1. **Through Thrust and Propellant Flow Rate:** The most straightforward way to calculate Specific Impulse is by dividing the thrust (F) by the weight flow rate of the propellant ($\dot{m} \cdot g_0$), where $\dot{m}$ is the mass flow rate of the propellant and $g_0$ is the acceleration due to gravity at Earth's surface. The equation is:
+
    $$ I\_{sp} = \frac{F}{\dot{m} \cdot g_0} $$
 
 2. **Through Exhaust Velocity:** Another way to express Specific Impulse is through the exhaust velocity ($V_e$) of the rocket, which is the velocity at which exhaust leaves the rocket engine. Here, Specific Impulse is calculated as:
+
    $$ I\_{sp} = \frac{V_e}{g_0} $$
 
 ## Relation to the Rocket Equation
 
 - In the Tsiolkovsky rocket equation, Specific Impulse appears directly:
+
   $$ \Delta v = I\_{sp} \cdot g_0 \cdot \ln\left(\frac{m_0}{m_f}\right) $$
+
   This equation shows that the change in velocity ($\Delta v$) of a rocket is directly proportional to the Specific Impulse. A higher Specific Impulse means the rocket can achieve greater velocity change for the same amount of fuel.
 
 ## Relation to the Thrust Equation
