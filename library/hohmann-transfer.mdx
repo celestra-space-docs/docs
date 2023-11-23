@@ -1,0 +1,43 @@
+---
+title: "Hohmann Transfer"
+description: "Hohmann Transfers are fuel-efficient orbital maneuvers between two circular orbits, involving specific delta-V calculations and time considerations."
+---
+
+## Transfering between orbits
+
+A Hohmann Transfer Orbit is an efficient way to move a spacecraft between two orbits around the same celestial body, typically used for missions from Earth to the Moon or between different Earth orbits. It's named after Walter Hohmann, who first described it in 1925. It involves two major propulsion maneuvers:
+
+1. The spacecraft starts in a circular lower orbit, then fires its engine to enter a transitional elliptical orbit (the Hohmann Transfer Orbit) that intersects both the initial and final orbits.
+1. At the intersection with the final orbit, the spacecraft fires its engine again to circularize its path into the final orbit.
+
+## Key Formulas
+
+1. **Delta-V for Hohmann Transfer**:
+
+   - To enter the transfer orbit: $\Delta v_1 = \sqrt{\frac{GM}{r_1}}\left(\sqrt{\frac{2r_2}{r_1 + r_2}} - 1\right)$
+   - To circularize the final orbit: $\Delta v_2 = \sqrt{\frac{GM}{r_2}}\left(1 - \sqrt{\frac{2r_1}{r_1 + r_2}}\right)$
+   - $GM$ is the standard gravitational parameter of the central body.
+   - $r_1$ is the radius of the initial orbit.
+   - $r_2$ is the radius of the final orbit.
+
+2. **Total Delta-V for the Maneuver**:
+
+   - Total $\Delta v = \Delta v_1 + \Delta v_2$
+
+3. **Time of Flight**:
+   - Half the period of the elliptical transfer orbit: $ t = \frac{1}{2} \cdot 2\pi \sqrt{\frac{a^3}{GM}} $
+   - $a$ is the semi-major axis of the elliptical orbit, $ a = \frac{r_1 + r_2}{2} $.
+
+## Deductions from Hohmann Transfer
+
+1. **Fuel Efficiency**: Hohmann Transfers are the most fuel-efficient way to move between two circular orbits when the orbits are coplanar and the radius of the final orbit is not more than about 11.94 times the radius of the initial orbit.
+
+2. **Time Considerations**: Though fuel-efficient, Hohmann transfers are not the fastest way to move between orbits. They are suitable for missions where time is not a critical factor.
+
+3. **Limitations**: This transfer is only optimal under specific conditions (coplanar, circular orbits) and becomes less efficient as the relative sizes of the orbits diverge significantly.
+
+4. **Application in Mission Planning**: They are widely used in space mission planning, including sending spacecraft to other planets, transferring satellites to geostationary orbit, and inter-orbital transfers.
+
+5. **Influence on Rocket Design**: The delta-V requirements of Hohmann transfers influence the design and fuel capacity of rockets and spacecraft.
+
+Understanding Hohmann transfers is crucial for efficient and effective planning of space missions, especially when minimizing fuel consumption is a priority.

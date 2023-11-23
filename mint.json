@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Celestra Space Docs",
   "logo": {
     "dark": "/logo/celestra-dark.svg",
     "light": "/logo/celestra-light.svg"
@@ -38,7 +38,7 @@
       "url": "space-parameters"
     },
     {
-      "name": "Astronautics",
+      "name": "Astronautics Library",
       "url": "library"
     }
   ],
@@ -47,10 +47,15 @@
       "name": "Join our Discord",
       "icon": "discord",
       "url": "https://discord.gg/rXnXygJ2fg"
+    },
+    {
+      "name": "Astronautics Library",
+      "icon": "books",
+      "url": "library"
     }
   ],
   "primaryTab": {
-    "name": "User guide"
+    "name": "Platform Essentials"
   },
   "navigation": [
     {
@@ -105,8 +110,10 @@
         {
           "group": "Astrodynamics",
           "pages": [
+            "library/keplers-laws",
             "library/rocket-equation",
-            "library/vis-viva-equation"
+            "library/vis-viva-equation",
+            "library/hohmann-transfer"
           ]
         },
         {
