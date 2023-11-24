@@ -122,6 +122,12 @@
             "library/thrust-equation",
             "library/specific-impulse"
           ]
+        },
+        {
+          "group": "Astronomy",
+          "pages": [
+            "library/telescope-pointing"
+          ]
         }
       ]
     }
