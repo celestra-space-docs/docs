@@ -1,0 +1,62 @@
+---
+title: "Errors"
+description: ""
+---
+
+Error responses are always JSON-encoded, regardless of
+the request's Content-Type, with a corresponding
+`Content-Type: application/json` header. This ensures that
+the errors are human-readable in any setting.
+
+Errors are a JSON object with the keys:
+
+- **code**: One of the error codes as a string.
+- **msg**: A human-readable message describing the error
+  as a string.
+- **meta**: (optional) An object with string values holding
+  arbitrary additional metadata describing the error.
+
+Example:
+
+```json
+{
+  "code": "internal",
+  "msg": "Something went wrong"
+}
+```
+
+Example with metadata:
+
+```json
+{
+  "code": "permission_denied",
+  "msg": "Thou shall not pass",
+  "meta": {
+    "target": "Balrog",
+    "power": "999"
+  }
+}
+```
+
+| Error Code            | HTTP Status | Description                                                                                                                                         |
+| --------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `canceled`            | 408         | The operation was canceled, typically by the client.                                                                                                |
+| `unknown`             | 500         | An unknown error occurred, often used for unclassified or unexpected errors.                                                                        |
+| `invalid_argument`    | 400         | The client specified an invalid argument, indicating an error like a malformed file name or a number out of range.                                  |
+| `malformed`           | 400         | The client sent a malformed message, which could not be decoded due to improper encoding or incompatible message definitions.                       |
+| `deadline_exceeded`   | 408         | The operation expired before completion. This may occur even if the operation has technically completed successfully, but the response was delayed. |
+| `not_found`           | 404         | The requested entity was not found.                                                                                                                 |
+| `bad_route`           | 404         | The requested URL path is not routable to a Celestra service and method.                                                                            |
+| `already_exists`      | 409         | An attempt to create an entity failed because it already exists.                                                                                    |
+| `permission_denied`   | 403         | The caller lacks permission for the operation. Not to be used when the caller’s identity is unknown.                                                |
+| `unauthenticated`     | 401         | The request lacks valid authentication credentials for the operation.                                                                               |
+| `resource_exhausted`  | 429         | A resource has been exhausted or rate-limited, such as a per-user quota.                                                                            |
+| `failed_precondition` | 412         | The operation was rejected due to the system not being in a required state.                                                                         |
+| `aborted`             | 409         | The operation was aborted due to concurrency issues like transaction aborts or sequencer check failures.                                            |
+| `out_of_range`        | 400         | The operation was attempted outside the valid range, like reading past the end of a collection.                                                     |
+| `unimplemented`       | 501         | The operation is not implemented or not supported/enabled in this service.                                                                          |
+| `internal`            | 500         | Internal server error when invariants expected by the system were broken.                                                                           |
+| `unavailable`         | 503         | The service is currently unavailable, usually a transient condition.                                                                                |
+| `dataloss`            | 500         | The operation resulted in unrecoverable data loss or corruption.                                                                                    |
+
+<Snippet file="cta-start-account.mdx" />

@@ -1,0 +1,28 @@
+---
+title: "Delete Parameter"
+api: "POST /v1.SpaceParameterService/DeleteParameter"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_id" type="object">
+  <Expandable title="by_id">
+    <ParamField body="parameter_id" type="string"></ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_version" type="object">
+  <Expandable title="by_version">
+    <ParamField body="parameter_version_id" type="string"></ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="success" type="bool"></ResponseField>

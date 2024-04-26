@@ -1,4 +1,25 @@
 ---
 title: "Units and Prefixes"
-description: ""
+description: "Explore the use of units and prefixes used with the Celestra APIs."
 ---
+
+## Timekeeping
+
+<Info>
+  Timestamps adhere to the [RFC3339](https://www.rfc-editor.org/rfc/rfc3339.txt)
+  standard for date and time representation.
+</Info>
+
+<Info>
+  All events are recorded in Coordinated Universal Time (UTC), commonly referred
+  to as Zulu time.
+</Info>
+
+Examples of timestamp formats include:
+
+- Timestamp with nanoseconds: `1985-04-12T23:20:50.089591155Z`
+- Timestamp with seconds precision: `1985-04-12T23:20:50Z`
+
+In the case of geographically bound events, alongside the UTC timestamp, we provide a timestamp with timezone information. This approach guarantees the precise recording of events and their potential impact on human lives, accounting for timekeeping nuances, even in scenarios where future changes in timezones may occur.
+
+<Snippet file="cta-start-account.mdx" />

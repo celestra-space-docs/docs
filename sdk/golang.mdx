@@ -1,0 +1,58 @@
+---
+title: "Golang SDK"
+description: "Learn how to integrate Celestra using our Golang SDK."
+icon: "golang"
+iconType: "solid"
+---
+
+## Install
+
+<p>
+  To install Celestra SDK using Go mod, run this terminal command inside your
+  project folder:
+</p>
+
+```shell
+go get github.com/celestra-space/celestra-sdk-go
+```
+
+<p>Then, import the library to your Go file:</p>
+
+```go
+import "github.com/celestra-space/celestra-sdk-go"
+```
+
+## Quickstart
+
+```go
+package main
+
+import (
+	"context"
+	"log"
+
+	"github.com/celestra-space/celestra-sdk-go/celestra/starsign"
+	"github.com/celestra-space/celestra-sdk-go/spaceparameter"
+)
+
+func main() {
+	signer, err := starsign.NewClient(starsign.WithSignatureVersion(starsign.SignatureVersionV1), starsign.WithCredentials("id", "secret"))
+	if err != nil {
+		log.Fatalf("NewStarSignClient failed with %s", err)
+	}
+
+	svc := spaceparameter.NewClient(&spaceparameter.ClientConfig{
+		Signer:   signer,
+		Endpoint: "https://api.celestra.space",
+	})
+
+	para, err := svc.DescribeParameter(context.Background(), &spaceparameter.DescribeParameterRequest{})
+	if err != nil {
+		log.Fatalf("DescribeParameter failed with %s", err)
+	}
+
+	log.Printf("%+v", para)
+}
+```
+
+<Snippet file="cta-start-account.mdx" />

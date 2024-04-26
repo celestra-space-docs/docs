@@ -68,10 +68,27 @@
     {
       "group": "Essentials",
       "pages": [
-        "essentials/security",
+        {
+          "group": "API Design",
+          "pages": [
+            "essentials/https-post",
+            "essentials/data-serialization",
+            "essentials/native-data-types",
+            "essentials/endpoints",
+            "essentials/errors",
+            "essentials/units"
+          ]
+        },
+        {
+          "group": "Security",
+          "pages": [
+            "essentials/security",
+            "essentials/threat-model",
+            "essentials/request-signing"
+          ]
+        },
         "essentials/monitoring",
         "essentials/quotas",
-        "essentials/units",
         "essentials/glossary"
       ]
     },
@@ -84,24 +101,24 @@
       ]
     },
     {
-      "group": "How-to",
+      "group": "Endpoints",
       "pages": [
-        "space-parameters/howto/orbit"
+        "space-parameters/endpoints/create-parameter",
+        "space-parameters/endpoints/describe-parameter",
+        "space-parameters/endpoints/update-parameter",
+        "space-parameters/endpoints/delete-parameter",
+        "space-parameters/endpoints/list-parameter",
+        "space-parameters/endpoints/create-parameter-set",
+        "space-parameters/endpoints/describe-parameter-set",
+        "space-parameters/endpoints/update-parameter-set",
+        "space-parameters/endpoints/delete-parameter-set",
+        "space-parameters/endpoints/list-parameter-set"
       ]
     },
     {
-      "group": "Endpoints",
+      "group": "SDKs",
       "pages": [
-        "space-parameters/endpoints/parameter-crud-l",
-        "space-parameters/endpoints/parameter-set-crud-l",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedeleteparameter",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedeleteparameterset",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedescribeparameter",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicedescribeparameterset",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicelistparameter",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterservicelistparameterset",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterserviceupdateparameter",
-        "space-parameters/endpoints/post-twirpparameterv1spaceparameterserviceupdateparameterset"
+        "sdk/golang"
       ]
     },
     {
@@ -120,7 +137,8 @@
           "group": "Propulsion",
           "pages": [
             "library/thrust-equation",
-            "library/specific-impulse"
+            "library/specific-impulse",
+            "library/combustion-chambers"
           ]
         },
         {
@@ -133,14 +151,8 @@
     }
   ],
   "api": {
-    "baseUrl": "https://api.celestra.space",
-    "auth": {
-      "method": "key",
-      "name": "Authorization",
-      "inputPrefix": "token <secret>"
-    }
+    "baseUrl": "https://api.celestra.space"
   },
-  "openapi": "https://api.celestra.space/openapi.json",
   "footerSocials": {
     "twitter": "https://twitter.com/celestra-space",
     "github": "https://github.com/celestra-space-docs",

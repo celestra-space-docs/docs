@@ -1,4 +1,69 @@
 ---
-title: "Security"
-description: "The Celestra platform is built with security in mind at layer every layer"
+title: "Platform security"
+description: "The Celestra platform is built with security in mind at every layer"
 ---
+
+## Tenant Isolation
+
+Celestra provides robust tunable tenant isolation across its services:
+
+- Siloed Isolation: Allocating dedicated resources exclusively to each tenant.
+- Pooled Isolation: Sharing resources among multiple tenants.
+- While we do not offer complete siloed environments, tenants can tune isolation levels per service.
+
+## Access Management
+
+Our system ensures secure access management:
+
+- Individual Tenant Credentials: Unique credentials are issued for each tenant.
+- Tenant Switching: Accessing different tenants requires new, separate credentials.
+
+## Data Segregation and Encryption
+
+In pooled resources:
+
+- Primary Key Inclusion: Tenant ID is incorporated as part of the primary key for data segregation.
+
+## Monitoring and Logging
+
+Our monitoring and logging are designed to respect tenant privacy:
+
+- Anonymized Logs: Logs are devoid of tenant-specific information to ensure privacy.
+
+## Resource and Performance Isolation
+
+To maintain service quality:
+
+- Throttling: Resource consumption is monitored and throttled to prevent excessive use by any tenant.
+
+## Tenant Data Backup and Restoration
+
+Data resiliency is a priority:
+
+- Global Backup: Tenant data backups are stored encrypted across multiple continents for enhanced reliability and accessibility.
+
+## Data Protection and Privacy
+
+Data security is paramount:
+
+- Encryption: All data is encrypted both at rest and in transit.
+
+## Access Control
+
+Our API access control uses industry established methods:
+
+- HMAC Authentication: Machine to machine requests are authenticated using HMAC.
+- Phantom Token: Mainly used by the Cloud API for interactions with the Celestra web application.
+
+## Compliance and Auditing
+
+Celestra is committed to maintaining high standards of compliance and auditing in line with various legal and industrial frameworks. Our compliance efforts include:
+
+- General Data Protection Regulation (GDPR): Ensuring user data protection and privacy in accordance with EU laws.
+- Federal Risk and Authorization Management Program (FedRAMP): Adherence to standardized approach for security assessment and authorization.
+- CIS Benchmark: Implementing best practices for secure configuration.
+- Cloud Security Alliance (CSA) STAR Self-Assessment: Conducting self-assessments to ensure security and privacy controls.
+- AWS Well-Architected Framework: Aligning with AWS's principles for building secure, high-performing, resilient, and efficient infrastructure.
+
+{" "}
+<Snippet file="cta-start-account.mdx" />

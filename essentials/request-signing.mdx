@@ -1,0 +1,79 @@
+---
+title: "Signing API Requests"
+description: "StarSign is Celestra Space’s HMAC scheme for authenticating requests. It’s based on industry recommendations for authenticating requests using HMAC."
+---
+
+## Process for Signing requests with StarSign
+
+<Steps>
+  <Step title="Calculate hash of HTTP Request Body">
+    The digest algoritm to use is version specific. As of version 1 it is SHA256. The hash of the body are computed and compared "as-sent" and "as-recieved" which means there are no canonicalization of the body. Encoding must be UTF-8.
+
+    $$\text{hash}(\text{RequestBody})$$
+
+  </Step>
+  <Step title="Build signature payload">
+    The payload is the string to be signed. It uses URL Encoding as representation with all values percent encoded. See [payload specification](#signature-payload-parameters). Example payload:
+
+    ```
+    a=hmac-sha256&
+    d=GMuuPsaA4rCsGeMa56Ew4nu4ED79jkQ9kKS8UDUHYFv1&
+    id=clientID&
+    n=ETmr2tEpx691VS&
+    u=v1.SpaceParameterService%2FDescribeParameter&
+    t=20060102T150405Z
+    ```
+
+  </Step>
+  <Step title="Compute HMAC signature">
+    Compute the HMAC hash of the payload using the Client Secret.
+
+    $$\text{signature} = \text{HMAC}(secret, payload)$$
+
+  </Step>
+  <Step title="Format Authorization header">
+    Format the Authorization header. Base58 encode the HMAC hash and the payload using the BTC alphabet. The HeaderKey is version specific, as of version 1 it is `starsign1`.
+
+    $$\small\text{HeaderKey} \ || \ \text{' ' (space)} \ || \ \text{Base58}(\text{signature}) \ || \ \text{';'} \ || \ \text{Base58}(\text{payload})$$
+
+  </Step>
+  <Step title="Set Authorization header to request and send it">
+    ```
+    Authorization: starsign1 3CAR2hUPT9[...];wMX3EtvWaZ[...]
+    ```
+  </Step>
+</Steps>
+
+## Signature Payload Parameters
+
+The signature payload is metadata that gets signed and sent with the signature hash.
+
+<ParamField query="a" type="string" required>
+  HMAC **algoritm** constant is version specific, as of version 1 it is
+  `hmac-sha256`.
+</ParamField>
+<ParamField query="n" type="base58(BTC) encoded hash" required>
+  **Nonce** must be at least 16 bytes and at most the same length as the client
+  secret. Requests that reuse a previous nonce are denied.
+</ParamField>
+<ParamField query="u" type="URL Path" required>
+  **URL** Path of the request with any leading slash trimmed. Example
+  `v1.SpaceParameterService/DescribeParameter`
+</ParamField>
+<ParamField query="t" type="datetime" required>
+  **Time** of signing the request. Time format is ISO 8601 (20060102T150405Z).
+</ParamField>
+<ParamField query="d" type="base58(BTC) encoded hash">
+  Hash **digest** value of the HTTP body. The digest algoritm is version
+  specific, as of version 1 it is SHA256.
+</ParamField>
+<ParamField query="b" type="datetime">
+  The request is valid until and **before** the specified time. Time format is
+  ISO 8601 (20060102T150405Z)
+</ParamField>
+
+## Extending validity of requests
+
+The StarSign signature scheme allows for setting a payload field named `b` for Before. It allows for extending the request validity into the future.
+
+<Snippet file="cta-start-account.mdx" />

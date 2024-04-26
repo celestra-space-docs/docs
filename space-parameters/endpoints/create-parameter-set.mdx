@@ -1,0 +1,27 @@
+---
+title: "Create Parameter Set"
+api: "POST /v1.SpaceParameterService/CreateParameterSet"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="description" type="string">
+  Alias can be used as a human friendly name or external ID. E.g.
+  `/assembly1/part2/component3/id` or `SUN_AZIMUTH_ANGLE`
+</ParamField>
+<ParamField body="member_parameter_ids" type="string[]"></ParamField>
+<ParamField body="member_parameter_version_ids" type="string[]"></ParamField>
+
+## Response
+
+<ResponseField name="parameter_set" type="object">
+  <Expandable title="parameter set">
+    <Snippet file="parameter-set-object.mdx" />
+  </Expandable>
+</ResponseField>

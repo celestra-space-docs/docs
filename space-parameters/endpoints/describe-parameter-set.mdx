@@ -1,0 +1,32 @@
+---
+title: "Describe Parameter Set"
+api: "POST /v1.SpaceParameterService/DescribeParameterSet"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_id" type="object">
+  <Expandable title="by_id">
+    <ParamField body="parameter_set_id" type="string"></ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_version" type="object">
+  <Expandable title="by_version">
+    <ParamField body="parameter_set_version_id" type="string"></ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="parameter_set" type="object">
+  <Expandable title="parameter set">
+    <Snippet file="parameter-set-object.mdx" />
+  </Expandable>
+</ResponseField>

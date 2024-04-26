@@ -1,0 +1,38 @@
+Act as a concise technical write with a AWS style and tone. Write the documentation for a "Security" page for a Space software SaaS using the bulletpoints below:
+
+
+- Compliance and Auditing
+  - Celestra are compliant with applicable law and works towards compliance with several frameworks.
+    - GDPR
+    - FedRAMP
+    - CIS Benchmark
+    - CSA STAR self-assessment
+    - AWS Well-Architected Framework
+- Tenant Isolation
+  - Celestra offers two isolation layers for each service.
+    - Siloed means resources are dedicated to a tenant.
+    - Pooled means resources are shared by tenants.
+  - Celestra does not offer full stack silo/dedicated environments, instead it is tunable per service
+- Access Management
+  - Credentials to each tenant are issued on a per tenant basis
+  - Switching active tenant requires separate new credentials.
+- Data Segregation and Encryption
+  - For pooled resources the tenant ID is part of the primary key.
+- Monitoring and Logging
+  - Logs do not contain tenant specific information
+- Resource and Performance Isolation
+  - Each tenant has throttling applied if too much resources are consumed.
+- Tenant Data Backup and Restoration
+  - Backup is stored on several continents.
+- Data Protection and Privacy
+  - All data is encrypted at rest and encrypted in flight.
+- Access Control
+  - API Authentication
+    - HMAC
+      - Provided and used by the SDK
+      - Most secure
+      - Secret is either a secret key or phantom token (allows for not sending the token over the network)
+    - Phantom token
+      - Used mainly by Cloud API against the celestra web application
+
+<Snippet file="cta-start-account.mdx" />

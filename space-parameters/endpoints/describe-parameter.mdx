@@ -1,0 +1,42 @@
+---
+title: "Describe Parameter"
+api: "POST /v1.SpaceParameterService/DescribeParameter"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_version" type="object">
+  Get Parameter version by ID
+  <Expandable title="by_version">
+    <ParamField body="parameter_id" type="string"></ParamField>
+    <ParamField body="version_id" type="string"></ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_alias" type="object">
+  Get latest Parameter by alias
+  <Expandable title="by_alias">
+    <ParamField body="alias" type="string"></ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_latest_version" type="object">
+  Get latest Parameter by ID
+  <Expandable title="by_latest_version">
+    <ParamField body="parameter_id" type="string"></ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="parameter" type="object">
+  <Expandable title="parameter">
+    <Snippet file="parameter-object.mdx" />
+  </Expandable>
+</ResponseField>

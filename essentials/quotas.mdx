@@ -1,4 +1,30 @@
 ---
 title: "Quotas"
-description: ""
+description: "This document provides an overview of request quotas for Celestra Space, including rate limits and in-flight request limits. These quotas are essential to maintain the performance and reliability of our services."
 ---
+
+## Request Quotas
+
+| Quota Description  | Default | Adjustable | Description                        |
+| ------------------ | ------- | ---------- | ---------------------------------- |
+| Request Rate (RPS) | 20      | Yes        | Maximum requests per second.       |
+| Minute Burst       | 100     | Yes        | Maximum burst requests per minute. |
+| Maximum In-flight  | 20      | Yes        | Maximum concurrent requests.       |
+
+### Request Rate (RPS)
+
+The Request Rate (RPS) limit defines the maximum number of requests per second. This means that clients can send up to 20 requests to our services within a one-second window.
+
+### Minute Burst
+
+The Minute Burst limit allows for a temporary surge in requests that can exceed the standard request rate. This provision is designed to accommodate short-term increases in traffic without breaching the RPS limit.
+
+### Maximum In-flight
+
+The Maximum In-flight limit specifies the maximum number of simultaneous requests.
+
+## Usage Guidelines
+
+Clients should plan their requests accordingly to stay within these boundaries.
+
+Please be aware that these quotas are subject to adjustment based on system performance and operational requirements. We recommend regularly consulting our documentation and reaching out to our support team for any updates or changes to these quotas.
