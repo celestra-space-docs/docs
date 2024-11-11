@@ -12,8 +12,8 @@ api: "POST /v1.SpaceParameterService/CreateParameter"
 ### Body
 
 <ParamField body="alias" type="string">
-  Alias can be used as a human friendly name or external ID. E.g.
-  `/assembly1/part2/component3/id` or `SUN_AZIMUTH_ANGLE`
+  Alias can be used as a human friendly name or external ID. Slashes are treated as folder separators in many of our UIs. E.g.
+  `/assembly1/part2/component3/id` or `SUN_AZIMUTH_ANGLE`.
 </ParamField>
 
 ## Response

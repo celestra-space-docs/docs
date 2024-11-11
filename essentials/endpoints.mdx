@@ -2,3 +2,37 @@
 title: "API Endpoints"
 description: ""
 ---
+
+## Global Endpoints
+
+The global endpoint uses geographic routing to determine the closest region to the caller.
+
+| Name | Endpoint |
+| - | -|
+| Global |	`api.celestra.space` |
+
+## Regional Endpoints
+
+Regional endpoints are geographically isolated and are not subject to geographic routing. Please use the appropriate endpoint for your needs and consider using a second region for redundancy.
+
+```
+https://api.[region-code].celestra.space
+```
+
+| Name | Code |
+| - | -|
+| Europe (Stockholm) |	eu-north-1 |
+
+##  Service Endpoints
+
+| Service | Endpoint |
+| -------- | ----------- |
+| Space Parameters | `/v1.SpaceParameterService/[method]` |
+
+## Full Example
+
+```
+https://api.eu-north-1.celestra.space/v1.SpaceParameterService/CreateSpaceParameter
+```
+
+<Snippet file="cta-start-account.mdx" />

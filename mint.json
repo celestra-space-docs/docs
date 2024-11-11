@@ -18,6 +18,14 @@
       "to": "#9563FF"
     }
   },
+  "font": {
+    "headings": {
+      "family": "Barlow"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  },
   "topbarLinks": [
     {
       "name": "Console",
@@ -55,15 +63,12 @@
     }
   ],
   "primaryTab": {
-    "name": "Platform Essentials"
+    "name": "Platform"
   },
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart"
-      ]
+      "group": "Welcome",
+      "pages": ["overview", "quickstart"]
     },
     {
       "group": "Essentials",
@@ -81,14 +86,10 @@
         },
         {
           "group": "Security",
-          "pages": [
-            "essentials/security",
-            "essentials/threat-model",
-            "essentials/request-signing"
-          ]
+          "pages": ["essentials/security", "essentials/request-signing"]
         },
-        "essentials/monitoring",
         "essentials/quotas",
+        "essentials/changelog",
         "essentials/glossary"
       ]
     },
@@ -117,9 +118,7 @@
     },
     {
       "group": "SDKs",
-      "pages": [
-        "sdk/golang"
-      ]
+      "pages": ["sdk/golang"]
     },
     {
       "group": "Astronautics Library",
@@ -142,10 +141,8 @@
           ]
         },
         {
-          "group": "Astronomy",
-          "pages": [
-            "library/telescope-pointing"
-          ]
+          "group": "Avionics",
+          "pages": ["library/convolutional-coding", "library/signal-modulation"]
         }
       ]
     }
@@ -160,7 +157,8 @@
   },
   "feedback": {
     "suggestEdit": true,
-    "raiseIssue": true
+    "raiseIssue": true,
+    "thumbsRating": true
   },
   "modeToggle": {
     "default": "dark",

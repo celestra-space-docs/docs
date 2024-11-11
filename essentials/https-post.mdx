@@ -1,4 +1,36 @@
 ---
 title: "HTTPS-POST RPC"
-description: ""
+description: "This document outlines how to interact with the Celestra Space API via HTTPS POST JSON RPC."
 ---
+
+## Overview
+
+HTTPS-POST RPC allows clients to securely execute predefined operations on a server by sending HTTP POST requests over HTTPS.
+
+## Prerequisites
+
+- Ensure all systems are equipped with valid SSL/TLS certificate chains to establish a secure HTTPS connection.
+
+## Data Serialization
+
+The API supports two serialization formats: JSON, for its simplicity and readability, and Protobuf, for its efficiency and compactness, catering to varying application requirements and network conditions. [Learn more](/essentials/data-serialization).
+
+## Example
+
+```bash
+curl --request POST \
+  --url https://api.celestra.space/v1.SpaceParameterService/CreateParameter \
+  --header 'Authorization: <authorization>' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "alias": "<string>"
+  }'
+```
+
+## Endpoints
+
+Please refer to the [Endpoints](/essentials/endpoints) page for the full list of endpoints.
+
+
+
+<Snippet file="cta-start-account.mdx" />
