@@ -1,0 +1,23 @@
+---
+title: "Delete Edge"
+api: "POST /v1.DagmaelService/DeleteEdge"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="edge_id" type="string" required>
+  Edge identifier to delete
+</ParamField>
+
+## Response
+
+<ResponseField name="success" type="boolean">
+  Indicates whether the deletion was successful
+</ResponseField>
+

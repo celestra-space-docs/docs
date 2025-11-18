@@ -1,0 +1,41 @@
+---
+title: "Create Binding"
+api: "POST /v1.DagmaelService/CreateBinding"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="source_dag_id" type="string" required>
+  ID of the source DAG
+</ParamField>
+
+<ParamField body="source_node_id" type="string" required>
+  ID of the source Node in the source DAG
+</ParamField>
+
+<ParamField body="target_dag_id" type="string" required>
+  ID of the target DAG
+</ParamField>
+
+<ParamField body="target_node_id" type="string" required>
+  ID of the target Node in the target DAG
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Key-value pairs for custom metadata associated with the Binding.
+</ParamField>
+
+## Response
+
+<ResponseField name="binding" type="object">
+  <Expandable title="binding">
+    <Snippet file="binding-object.mdx" />
+  </Expandable>
+</ResponseField>
+

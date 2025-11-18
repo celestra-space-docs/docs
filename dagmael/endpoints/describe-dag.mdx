@@ -1,0 +1,43 @@
+---
+title: "Describe DAG"
+api: "POST /v1.DagmaelService/DescribeDAG"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_id" type="object">
+  Get latest DAG by ID
+  <Expandable title="by_id">
+    <ParamField body="dag_id" type="string" required>DAG identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_version" type="object">
+  Get specific DAG version by ID and version number
+  <Expandable title="by_version">
+    <ParamField body="dag_id" type="string" required>DAG identifier</ParamField>
+    <ParamField body="dag_version" type="integer" required>Version number</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_alias" type="object">
+  Get latest DAG by alias
+  <Expandable title="by_alias">
+    <ParamField body="alias" type="string" required>DAG alias</ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="dag" type="object">
+  <Expandable title="dag">
+    <Snippet file="dag-object.mdx" />
+  </Expandable>
+</ResponseField>
+

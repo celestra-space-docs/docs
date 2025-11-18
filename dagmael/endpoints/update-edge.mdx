@@ -1,0 +1,38 @@
+---
+title: "Update Edge"
+api: "POST /v1.DagmaelService/UpdateEdge"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="node_id" type="string" required>
+  Node identifier (used for version tracking)
+</ParamField>
+
+<ParamField body="version" type="integer" required>
+  Version number
+</ParamField>
+
+<ParamField body="edge" type="object">
+  Edge object with updated fields
+  <Expandable title="edge">
+    <ParamField body="source_node_id" type="string">Updated source node ID</ParamField>
+    <ParamField body="target_node_id" type="string">Updated target node ID</ParamField>
+    <ParamField body="metadata" type="object">Updated metadata</ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="edge" type="object">
+  <Expandable title="edge">
+    <Snippet file="edge-object.mdx" />
+  </Expandable>
+</ResponseField>
+

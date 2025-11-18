@@ -1,0 +1,33 @@
+---
+title: "Create Edge"
+api: "POST /v1.DagmaelService/CreateEdge"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="source_node_id" type="string" required>
+  ID of the source Node
+</ParamField>
+
+<ParamField body="target_node_id" type="string" required>
+  ID of the target Node
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Key-value pairs for custom metadata associated with the Edge.
+</ParamField>
+
+## Response
+
+<ResponseField name="edge" type="object">
+  <Expandable title="edge">
+    <Snippet file="edge-object.mdx" />
+  </Expandable>
+</ResponseField>
+

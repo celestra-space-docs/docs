@@ -1,0 +1,33 @@
+---
+title: "Create DAG"
+api: "POST /v1.DagmaelService/CreateDAG"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="alias" type="string">
+  Human-friendly alias for the DAG. Can be used as an external identifier.
+</ParamField>
+
+<ParamField body="display_name" type="string">
+  Display name for the DAG.
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Key-value pairs for custom metadata associated with the DAG.
+</ParamField>
+
+## Response
+
+<ResponseField name="dag" type="object">
+  <Expandable title="dag">
+    <Snippet file="dag-object.mdx" />
+  </Expandable>
+</ResponseField>
+

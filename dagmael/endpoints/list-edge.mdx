@@ -1,0 +1,53 @@
+---
+title: "List Edge"
+api: "POST /v1.DagmaelService/ListEdge"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_dag_version" type="object">
+  List all edges in a specific DAG version
+  <Expandable title="by_dag_version">
+    <ParamField body="dag_version_id" type="string" required>DAG version identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_parent_node" type="object">
+  List all edges where the given node is a parent (source)
+  <Expandable title="by_parent_node">
+    <ParamField body="node_id" type="string" required>Node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Node version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_child_node" type="object">
+  List all edges where the given node is a child (target)
+  <Expandable title="by_child_node">
+    <ParamField body="node_id" type="string" required>Node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Node version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="exclusive_start_key" type="string">
+  Base64-encoded pagination token from the previous response. Used to retrieve the next page of results.
+</ParamField>
+
+## Response
+
+<ResponseField name="edges" type="array">
+  Array of Edge objects
+  <Expandable title="edge">
+    <Snippet file="edge-object.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="last_evaluated_key" type="string">
+  Base64-encoded pagination token. Include this as `exclusive_start_key` in the next request to continue pagination.
+</ResponseField>
+

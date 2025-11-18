@@ -1,0 +1,36 @@
+---
+title: "Describe Binding"
+api: "POST /v1.DagmaelService/DescribeBinding"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_id" type="object">
+  Get latest Binding by ID
+  <Expandable title="by_id">
+    <ParamField body="binding_id" type="string" required>Binding identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_version" type="object">
+  Get specific Binding version by ID and version number
+  <Expandable title="by_version">
+    <ParamField body="binding_id" type="string" required>Binding identifier</ParamField>
+    <ParamField body="version" type="integer" required>Version number</ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="binding" type="object">
+  <Expandable title="binding">
+    <Snippet file="binding-object.mdx" />
+  </Expandable>
+</ResponseField>
+

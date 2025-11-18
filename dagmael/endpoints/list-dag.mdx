@@ -1,0 +1,44 @@
+---
+title: "List DAG"
+api: "POST /v1.DagmaelService/ListDAG"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_latest" type="object">
+  List all latest DAG versions for a tenant
+  <Expandable title="by_latest">
+    <ParamField body="tenant_id" type="string" required>Tenant identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_versions" type="object">
+  List all versions of a specific DAG
+  <Expandable title="by_versions">
+    <ParamField body="dag_id" type="string" required>DAG identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="exclusive_start_key" type="string">
+  Base64-encoded pagination token from the previous response. Used to retrieve the next page of results.
+</ParamField>
+
+## Response
+
+<ResponseField name="dags" type="array">
+  Array of DAG objects
+  <Expandable title="dag">
+    <Snippet file="dag-object.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="last_evaluated_key" type="string">
+  Base64-encoded pagination token. Include this as `exclusive_start_key` in the next request to continue pagination.
+</ResponseField>
+

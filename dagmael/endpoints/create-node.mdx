@@ -1,0 +1,38 @@
+---
+title: "Create Node"
+api: "POST /v1.DagmaelService/CreateNode"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="dag_id" type="string" required>
+  DAG identifier where the Node will be created
+</ParamField>
+
+<ParamField body="edges" type="array">
+  Optional array of Edge objects to create along with the Node. This provides a convenient way to create edges in the same operation.
+  <Expandable title="edge">
+    <ParamField body="source_node_id" type="string">Source node ID (will be set to the created node if not specified)</ParamField>
+    <ParamField body="target_node_id" type="string">Target node ID</ParamField>
+    <ParamField body="metadata" type="object">Edge metadata</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Key-value pairs for custom metadata associated with the Node.
+</ParamField>
+
+## Response
+
+<ResponseField name="node" type="object">
+  <Expandable title="node">
+    <Snippet file="node-object.mdx" />
+  </Expandable>
+</ResponseField>
+

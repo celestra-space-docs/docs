@@ -16,10 +16,10 @@
   },
   "host": "api.celestra.space",
   "paths": {
-    "/twirp/parameter.v1.SpaceParameterService/CreateParameter": {
+    "/twirp/parameter.v1.ParamidionService/CreateParameter": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "summary": "Parameter CRUD-L",
         "operationId": "CreateParameter",
@@ -43,10 +43,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/CreateParameterSet": {
+    "/twirp/parameter.v1.ParamidionService/CreateParameterSet": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "summary": "Parameter Set CRUD-L",
         "operationId": "CreateParameterSet",
@@ -70,10 +70,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/DeleteParameter": {
+    "/twirp/parameter.v1.ParamidionService/DeleteParameter": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "DeleteParameter",
         "parameters": [
@@ -96,10 +96,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/DeleteParameterSet": {
+    "/twirp/parameter.v1.ParamidionService/DeleteParameterSet": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "DeleteParameterSet",
         "parameters": [
@@ -122,10 +122,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/DescribeParameter": {
+    "/twirp/parameter.v1.ParamidionService/DescribeParameter": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "DescribeParameter",
         "parameters": [
@@ -148,10 +148,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/DescribeParameterSet": {
+    "/twirp/parameter.v1.ParamidionService/DescribeParameterSet": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "DescribeParameterSet",
         "parameters": [
@@ -174,10 +174,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/ListParameter": {
+    "/twirp/parameter.v1.ParamidionService/ListParameter": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "ListParameter",
         "parameters": [
@@ -200,10 +200,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/ListParameterSet": {
+    "/twirp/parameter.v1.ParamidionService/ListParameterSet": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "ListParameterSet",
         "parameters": [
@@ -226,10 +226,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/UpdateParameter": {
+    "/twirp/parameter.v1.ParamidionService/UpdateParameter": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "UpdateParameter",
         "parameters": [
@@ -252,10 +252,10 @@
         }
       }
     },
-    "/twirp/parameter.v1.SpaceParameterService/UpdateParameterSet": {
+    "/twirp/parameter.v1.ParamidionService/UpdateParameterSet": {
       "post": {
         "tags": [
-          "SpaceParameterService"
+          "ParamidionService"
         ],
         "operationId": "UpdateParameterSet",
         "parameters": [

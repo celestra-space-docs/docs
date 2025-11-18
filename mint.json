@@ -42,8 +42,8 @@
   },
   "tabs": [
     {
-      "name": "Space Parameters",
-      "url": "space-parameters"
+      "name": "Paramidion",
+      "url": "paramidion"
     },
     {
       "name": "Astronautics Library",
@@ -94,26 +94,26 @@
       ]
     },
     {
-      "group": "Space Parameters",
+      "group": "Paramidion",
       "pages": [
-        "space-parameters/what-it-is",
-        "space-parameters/getting-started",
-        "space-parameters/pricing"
+        "paramidion/what-it-is",
+        "paramidion/getting-started",
+        "paramidion/pricing"
       ]
     },
     {
       "group": "Endpoints",
       "pages": [
-        "space-parameters/endpoints/create-parameter",
-        "space-parameters/endpoints/describe-parameter",
-        "space-parameters/endpoints/update-parameter",
-        "space-parameters/endpoints/delete-parameter",
-        "space-parameters/endpoints/list-parameter",
-        "space-parameters/endpoints/create-parameter-set",
-        "space-parameters/endpoints/describe-parameter-set",
-        "space-parameters/endpoints/update-parameter-set",
-        "space-parameters/endpoints/delete-parameter-set",
-        "space-parameters/endpoints/list-parameter-set"
+        "paramidion/endpoints/create-parameter",
+        "paramidion/endpoints/describe-parameter",
+        "paramidion/endpoints/update-parameter",
+        "paramidion/endpoints/delete-parameter",
+        "paramidion/endpoints/list-parameter",
+        "paramidion/endpoints/create-parameter-set",
+        "paramidion/endpoints/describe-parameter-set",
+        "paramidion/endpoints/update-parameter-set",
+        "paramidion/endpoints/delete-parameter-set",
+        "paramidion/endpoints/list-parameter-set"
       ]
     },
     {

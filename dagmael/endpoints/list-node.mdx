@@ -1,0 +1,65 @@
+---
+title: "List Node"
+api: "POST /v1.DagmaelService/ListNode"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_dag_version" type="object">
+  List all nodes in a specific DAG version
+  <Expandable title="by_dag_version">
+    <ParamField body="dag_version_id" type="string" required>DAG version identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_parent_node" type="object">
+  List all nodes that are parents of a given node
+  <Expandable title="by_parent_node">
+    <ParamField body="node_id" type="string" required>Node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Node version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_child_node" type="object">
+  List all nodes that are children of a given node
+  <Expandable title="by_child_node">
+    <ParamField body="node_id" type="string" required>Node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Node version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_ancestor_node" type="object">
+  List all nodes that are ancestors of a given node
+  <Expandable title="by_ancestor_node">
+    <ParamField body="node_id" type="string" required>Node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Node version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="depth_limit" type="integer">
+  Maximum depth to traverse. 0 = same node, 1 = immediate children/parents, etc. Defaults to unlimited if not specified.
+</ParamField>
+
+<ParamField body="exclusive_start_key" type="string">
+  Base64-encoded pagination token from the previous response. Used to retrieve the next page of results.
+</ParamField>
+
+## Response
+
+<ResponseField name="nodes" type="array">
+  Array of Node objects
+  <Expandable title="node">
+    <Snippet file="node-object.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="last_evaluated_key" type="string">
+  Base64-encoded pagination token. Include this as `exclusive_start_key` in the next request to continue pagination.
+</ResponseField>
+

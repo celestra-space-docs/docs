@@ -1,0 +1,36 @@
+---
+title: "Describe Node"
+api: "POST /v1.DagmaelService/DescribeNode"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_id" type="object">
+  Get latest Node by ID
+  <Expandable title="by_id">
+    <ParamField body="node_id" type="string" required>Node identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_version" type="object">
+  Get specific Node version by ID and version number
+  <Expandable title="by_version">
+    <ParamField body="node_id" type="string" required>Node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Version number</ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="node" type="object">
+  <Expandable title="node">
+    <Snippet file="node-object.mdx" />
+  </Expandable>
+</ResponseField>
+

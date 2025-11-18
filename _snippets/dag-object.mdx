@@ -1,0 +1,25 @@
+<ResponseField name="dag_id" type="string" required>
+  Unique identifier for the DAG
+</ResponseField>
+<ResponseField name="dag_version" type="integer" required>
+  Version number of the DAG
+</ResponseField>
+<ResponseField name="alias" type="string">
+  Human-friendly alias for the DAG
+</ResponseField>
+<ResponseField name="display_name" type="string">
+  Display name for the DAG
+</ResponseField>
+<ResponseField name="created_at" type="string" required>
+  RFC3339 timestamp when the DAG was created
+</ResponseField>
+<ResponseField name="deleted_at" type="string">
+  RFC3339 timestamp when the DAG was deleted (if applicable)
+</ResponseField>
+<ResponseField name="deleted_by" type="string">
+  User ID who deleted the DAG (if applicable)
+</ResponseField>
+<ResponseField name="metadata" type="object">
+  Key-value pairs for custom metadata
+</ResponseField>
+

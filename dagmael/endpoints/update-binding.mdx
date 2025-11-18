@@ -1,0 +1,29 @@
+---
+title: "Update Binding"
+api: "POST /v1.DagmaelService/UpdateBinding"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="binding_id" type="string" required>
+  Binding identifier
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Key-value pairs for custom metadata. This will replace existing metadata.
+</ParamField>
+
+## Response
+
+<ResponseField name="binding" type="object">
+  <Expandable title="binding">
+    <Snippet file="binding-object.mdx" />
+  </Expandable>
+</ResponseField>
+

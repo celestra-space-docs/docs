@@ -1,0 +1,70 @@
+---
+title: "List Binding"
+api: "POST /v1.DagmaelService/ListBinding"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_source_dag" type="object">
+  List all bindings by source DAG
+  <Expandable title="by_source_dag">
+    <ParamField body="source_dag_id" type="string" required>Source DAG identifier</ParamField>
+    <ParamField body="version" type="integer" required>DAG version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_target_dag" type="object">
+  List all bindings by target DAG
+  <Expandable title="by_target_dag">
+    <ParamField body="target_dag_id" type="string" required>Target DAG identifier</ParamField>
+    <ParamField body="version" type="integer" required>DAG version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_tenant" type="object">
+  List all bindings for a tenant
+  <Expandable title="by_tenant">
+    <ParamField body="tenant_id" type="string" required>Tenant identifier</ParamField>
+    <ParamField body="version" type="integer" required>Version filter</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_source_node" type="object">
+  List all bindings by source node
+  <Expandable title="by_source_node">
+    <ParamField body="source_node_id" type="string" required>Source node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Node version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_target_node" type="object">
+  List all bindings by target node
+  <Expandable title="by_target_node">
+    <ParamField body="target_node_id" type="string" required>Target node identifier</ParamField>
+    <ParamField body="version" type="integer" required>Node version</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="exclusive_start_key" type="string">
+  Base64-encoded pagination token from the previous response. Used to retrieve the next page of results.
+</ParamField>
+
+## Response
+
+<ResponseField name="bindings" type="array">
+  Array of Binding objects
+  <Expandable title="binding">
+    <Snippet file="binding-object.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="last_evaluated_key" type="string">
+  Base64-encoded pagination token. Include this as `exclusive_start_key` in the next request to continue pagination.
+</ResponseField>
+

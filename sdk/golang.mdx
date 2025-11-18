@@ -32,7 +32,7 @@ import (
 	"log"
 
 	"github.com/celestra-space/celestra-sdk-go/celestra/starsign"
-	"github.com/celestra-space/celestra-sdk-go/spaceparameter"
+	"github.com/celestra-space/celestra-sdk-go/paramidion"
 )
 
 func main() {
@@ -41,12 +41,12 @@ func main() {
 		log.Fatalf("NewStarSignClient failed with %s", err)
 	}
 
-	svc := spaceparameter.NewClient(&spaceparameter.ClientConfig{
+	svc := Paramidion.NewClient(&Paramidion.ClientConfig{
 		Signer:   signer,
 		Endpoint: "https://api.celestra.space",
 	})
 
-	para, err := svc.DescribeParameter(context.Background(), &spaceparameter.DescribeParameterRequest{})
+	para, err := svc.DescribeParameter(context.Background(), &Paramidion.DescribeParameterRequest{})
 	if err != nil {
 		log.Fatalf("DescribeParameter failed with %s", err)
 	}

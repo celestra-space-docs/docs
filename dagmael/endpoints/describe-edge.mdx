@@ -1,0 +1,36 @@
+---
+title: "Describe Edge"
+api: "POST /v1.DagmaelService/DescribeEdge"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="by_id" type="object">
+  Get latest Edge by ID
+  <Expandable title="by_id">
+    <ParamField body="edge_id" type="string" required>Edge identifier</ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="by_version" type="object">
+  Get specific Edge version by ID and version number
+  <Expandable title="by_version">
+    <ParamField body="edge_id" type="string" required>Edge identifier</ParamField>
+    <ParamField body="version" type="integer" required>Version number</ParamField>
+  </Expandable>
+</ParamField>
+
+## Response
+
+<ResponseField name="edge" type="object">
+  <Expandable title="edge">
+    <Snippet file="edge-object.mdx" />
+  </Expandable>
+</ResponseField>
+

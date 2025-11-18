@@ -1,0 +1,37 @@
+---
+title: "Update DAG"
+api: "POST /v1.DagmaelService/UpdateDAG"
+---
+
+## Request
+
+### Headers
+
+<Snippet file="authorization-param.mdx" />
+
+### Body
+
+<ParamField body="dag_id" type="string" required>
+  DAG identifier
+</ParamField>
+
+<ParamField body="alias" type="string">
+  New alias for the DAG
+</ParamField>
+
+<ParamField body="display_name" type="string">
+  New display name for the DAG
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Key-value pairs for custom metadata. This will replace existing metadata.
+</ParamField>
+
+## Response
+
+<ResponseField name="dag" type="object">
+  <Expandable title="dag">
+    <Snippet file="dag-object.mdx" />
+  </Expandable>
+</ResponseField>
+

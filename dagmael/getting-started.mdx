@@ -1,0 +1,74 @@
+---
+title: "Getting started"
+description: "Learn how to get started with Dagmael"
+---
+
+<Snippet file="cta-start-account.mdx" />
+
+## Quick Start
+
+Dagmael provides a comprehensive API for managing versioned graphs. Here's a typical workflow:
+
+### 1. Create a DAG
+
+Start by creating a DAG to represent your graph structure:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateDAG \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "alias": "product-requirements",
+    "display_name": "Product Requirements Tree"
+  }'
+```
+
+### 2. Create Nodes
+
+Add nodes to your DAG:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateNode \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "dag_id": "dag_01hjqnspgwfy9r67bpcxdrgk8d"
+  }'
+```
+
+### 3. Create Edges
+
+Connect nodes with edges to define relationships:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateEdge \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "source_node_id": "node_01hjqnspgwfy9r67bpcxdrgk8e",
+    "target_node_id": "node_01hjqnspgwfy9r67bpcxdrgk8f"
+  }'
+```
+
+### 4. Create Bindings (Optional)
+
+Link nodes across different DAGs:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateBinding \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "source_dag_id": "dag_01hjqnspgwfy9r67bpcxdrgk8d",
+    "source_node_id": "node_01hjqnspgwfy9r67bpcxdrgk8e",
+    "target_dag_id": "dag_01hjqnspgwfy9r67bpcxdrgk8g",
+    "target_node_id": "node_01hjqnspgwfy9r67bpcxdrgk8h"
+  }'
+```
+
+## Next Steps
+
+- Explore the [API endpoints](/dagmael/endpoints) for detailed documentation
+- Learn about [versioning and immutability](/dagmael/what-it-is#versioned)
+- Understand [cross-domain bindings](/dagmael/what-it-is#cross-domain-bindings)
+

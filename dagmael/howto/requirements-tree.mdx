@@ -1,0 +1,116 @@
+---
+title: "Building a Product Requirements Tree"
+description: "Learn how to model a Product Requirements Tree (PRT) using Dagmael"
+---
+
+## Overview
+
+A Product Requirements Tree (PRT) represents the hierarchical structure of product requirements, where parent requirements decompose into more specific child requirements. This guide shows how to build and manage a PRT using Dagmael.
+
+## Step 1: Create the DAG
+
+First, create a DAG to represent your Product Requirements Tree:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateDAG \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "alias": "product-requirements-v1",
+    "display_name": "Product Requirements Tree v1",
+    "metadata": {
+      "domain": "PRT",
+      "product": "satellite-communication-system"
+    }
+  }'
+```
+
+## Step 2: Create Root Requirements
+
+Create the top-level requirement nodes:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateNode \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "dag_id": "dag_01hjqnspgwfy9r67bpcxdrgk8d",
+    "metadata": {
+      "requirement_id": "REQ-001",
+      "title": "System must provide reliable communication",
+      "priority": "High"
+    }
+  }'
+```
+
+## Step 3: Create Child Requirements
+
+Create child requirements and connect them with edges to establish the hierarchy:
+
+```bash
+# Create a child requirement
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateNode \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "dag_id": "dag_01hjqnspgwfy9r67bpcxdrgk8d",
+    "metadata": {
+      "requirement_id": "REQ-001.1",
+      "title": "Uplink must support 1 Mbps minimum",
+      "priority": "High"
+    }
+  }'
+
+# Create an edge connecting parent to child
+curl -X POST https://api.celestra.space/v1.DagmaelService/CreateEdge \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "source_node_id": "node_01hjqnspgwfy9r67bpcxdrgk8e",
+    "target_node_id": "node_01hjqnspgwfy9r67bpcxdrgk8f",
+    "metadata": {
+      "relationship_type": "decomposes_to"
+    }
+  }'
+```
+
+## Step 4: Query the Tree
+
+List all nodes in your DAG to see the complete requirements tree:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/ListNode \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "by_dag_version": {
+      "dag_version_id": "dag_01hjqnspgwfy9r67bpcxdrgk8d#1"
+    }
+  }'
+```
+
+## Step 5: Traverse the Hierarchy
+
+Find all child requirements of a specific node:
+
+```bash
+curl -X POST https://api.celestra.space/v1.DagmaelService/ListNode \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "by_child_node": {
+      "node_id": "node_01hjqnspgwfy9r67bpcxdrgk8e",
+      "version": 1
+    },
+    "depth_limit": 3
+  }'
+```
+
+## Next Steps
+
+- Learn about [cross-domain bindings](/dagmael/what-it-is#cross-domain-bindings) to connect PRT with Manufacturing Requirements Trees (MRT)
+- Explore [versioning](/dagmael/what-it-is#versioned) to track requirement changes over time
+- Review the [API endpoints](/dagmael/endpoints) for advanced operations
+
+<Snippet file="cta-start-account.mdx" />
+

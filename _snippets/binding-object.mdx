@@ -1,0 +1,31 @@
+<ResponseField name="binding_id" type="string" required>
+  Unique identifier for the Binding
+</ResponseField>
+<ResponseField name="binding_version" type="integer" required>
+  Version number of the Binding
+</ResponseField>
+<ResponseField name="source_dag_id" type="string" required>
+  ID of the source DAG
+</ResponseField>
+<ResponseField name="source_node_id" type="string" required>
+  ID of the source Node
+</ResponseField>
+<ResponseField name="target_dag_id" type="string" required>
+  ID of the target DAG
+</ResponseField>
+<ResponseField name="target_node_id" type="string" required>
+  ID of the target Node
+</ResponseField>
+<ResponseField name="created_at" type="string" required>
+  RFC3339 timestamp when the Binding was created
+</ResponseField>
+<ResponseField name="deleted_at" type="string">
+  RFC3339 timestamp when the Binding was deleted (if applicable)
+</ResponseField>
+<ResponseField name="deleted_by" type="string">
+  User ID who deleted the Binding (if applicable)
+</ResponseField>
+<ResponseField name="metadata" type="object">
+  Key-value pairs for custom metadata
+</ResponseField>
+

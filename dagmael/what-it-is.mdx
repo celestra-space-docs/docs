@@ -1,0 +1,39 @@
+---
+title: "What is Dagmael?"
+description: "Dagmael is a managed graph database for versioned parallel realities DAGs. It's built on DynamoDB and scales very well. It's built to solve generative AI reasoning at scale."
+---
+
+## Overview
+
+Dagmael is a versioned graph database service designed for managing Directed Acyclic Graphs (DAGs) that represent interconnected structures within domains like Product Requirements Trees (PRT) or Manufacturing Requirements Trees (MRT). Each DAG captures parent-child hierarchies, data flow, and logical dependencies, enabling complex constraint reasoning and cross-domain relationships.
+
+<CardGroup cols={2}>
+  <Card title="Versioned">
+    All DAGs, Nodes, Edges, and Bindings are versioned and immutable. Changes create new versions, preserving complete history for audit trails and rollback capabilities.
+  </Card>
+  <Card title="Scalable">
+    Built on DynamoDB, Dagmael scales horizontally to handle large graphs with thousands of nodes and edges while maintaining low-latency query performance.
+  </Card>
+  <Card title="Cross-Domain Bindings">
+    Bindings connect nodes across different DAGs, enabling cross-domain constraint reasoning and dependency propagation without merging independent trees.
+  </Card>
+  <Card title="Parallel Reasoning">
+    Independent DAGs can represent parallel realities or alternative scenarios, with Bindings allowing reasoning across these parallel structures.
+  </Card>
+</CardGroup>
+
+## Core Concepts
+
+### DAG (Directed Acyclic Graph)
+A versioned, immutable structure of interconnected Nodes within a single domain. Each DAG represents a complete graph that can be independently versioned and managed.
+
+### Node
+A single unit in the graph, representing a vertex in either PRT or MRT. Nodes form the building blocks of DAGs and can have relationships defined through Edges.
+
+### Edge
+A directed relationship between Nodes, modeling DAG topology (parent-child) or domain-specific semantics like constraints, composition, or validation.
+
+### Binding
+Connects nodes across different DAGs via constraint interfaces, enabling cross-DAG reasoning and propagating dependencies or validity across otherwise independent trees.
+
+<Snippet file="cta-start-account.mdx" />
